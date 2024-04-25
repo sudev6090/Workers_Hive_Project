@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:workers_project/screen/register_screen.dart';
-import 'package:workers_project/widgets/bottom_screen.dart';
+import 'package:workers_project/widgets/bottom_nav_screen.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({super.key});
