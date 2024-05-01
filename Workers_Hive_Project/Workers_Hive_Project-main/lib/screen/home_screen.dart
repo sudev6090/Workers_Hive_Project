@@ -57,12 +57,12 @@ class _ScreenHomeState extends State<ScreenHome> {
                             ? const Center(
                                 child: Column(
                                   children: [
-                                    Text('No bikes available'),
+                                    Text('No Worker available'),
                                   ],
                                 ),
                               )
-                            : buildworkerList( searchedList)
-                        : buildworkerList( workersList),
+                            : buildworkerList(searchedList)
+                        : buildworkerList(workersList),
                   );
                 },
               ),
@@ -74,7 +74,7 @@ class _ScreenHomeState extends State<ScreenHome> {
   }
 }
 
-Widget buildworkerList( List<WorkerModel> workersList) {
+Widget buildworkerList(List<WorkerModel> workersList) {
   return ListView.builder(
     itemCount: workersList.length,
     itemBuilder: (context, index) {
@@ -132,8 +132,7 @@ class WorkerListItem extends StatelessWidget {
                     margin: const EdgeInsets.only(right: 35),
                     child: worker.image.isNotEmpty
                         ? FittedBox(
-                            fit: BoxFit
-                                .cover, // or BoxFit.contain, BoxFit.fill, etc. depending on your requirement
+                            fit: BoxFit.cover,
                             child: Image.file(File(worker.image)),
                           )
                         : Container(),
@@ -149,7 +148,6 @@ class WorkerListItem extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
-                      // Text('${worker.image}'),
                       const SizedBox(height: 10),
                       Text('WORK: ${worker.job}'),
                       Text('PLACE: ${worker.place}'),

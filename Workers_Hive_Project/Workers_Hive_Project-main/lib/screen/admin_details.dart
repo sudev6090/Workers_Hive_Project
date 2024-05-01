@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:workers_project/db/functions/db_functions.dart';
 import 'package:workers_project/models/worker_model/worker_model.dart';
 import 'package:workers_project/screen/edit_screen.dart';
+import 'package:workers_project/screen/home_screen.dart';
+import 'package:workers_project/widgets/bottom_nav_screen.dart';
 
 class AdminScreen extends StatefulWidget {
   const AdminScreen({super.key});
@@ -130,7 +132,25 @@ class WorkerListItem extends StatelessWidget {
                     ),
                     GestureDetector(
                         onTap: () {
-                          deleteWorker(index);
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: const Text('Deleting'),
+                                  content: const Text('Are You Sure'),
+                                  actions: [
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          deleteWorker(index);
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const MyBottom()));
+                                        },
+                                        child: const Text('YES'))
+                                  ],
+                                );
+                              });
                         },
                         child: const Icon(Icons.delete))
                   ],
