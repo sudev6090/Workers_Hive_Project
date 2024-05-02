@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:workers_project/db/functions/db_functions.dart';
 import 'package:workers_project/models/worker_model/worker_model.dart';
 import 'package:workers_project/screen/edit_screen.dart';
-import 'package:workers_project/screen/home_screen.dart';
 import 'package:workers_project/widgets/bottom_nav_screen.dart';
 
 class AdminScreen extends StatefulWidget {

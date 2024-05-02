@@ -1,3 +1,5 @@
+// ignore_for_file: use_super_parameters
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -6,7 +8,7 @@ import 'package:workers_project/models/booked_model/booked_model.dart';
 import 'package:workers_project/screen/confirm_details.dart';
 
 class ListScreen extends StatefulWidget {
-  const ListScreen({super.key});
+  const ListScreen({Key? key});
 
   @override
   State<ListScreen> createState() => _ListScreenState();
@@ -19,11 +21,8 @@ class _ListScreenState extends State<ListScreen> {
     super.initState();
   }
 
-  final List<String> item = List.generate(2, (index) => "Item $index");
-
   @override
   Widget build(BuildContext context) {
-    getAllWorkers();
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -31,17 +30,22 @@ class _ListScreenState extends State<ListScreen> {
             Expanded(
               child: ValueListenableBuilder<List<BookedModel>>(
                 valueListenable: bookedListNotifier,
-                builder: (context, workersList, _) {
-                  return ListView.builder(
-                    itemCount: workersList.length,
-                    itemBuilder: (context, index) {
-                      final worker = workersList[index];
-                      return WorkerListItem(
-                        worker: worker,
-                        index: index,
-                      );
-                    },
-                  );
+                builder: (context, bookedList, _) {
+                  if (bookedList.isEmpty) {
+                    return const Center(child: Text("No Confirmations"));
+                  } else {
+                    return ListView.builder(
+                      itemCount: bookedList.length,
+                      itemBuilder: (context, index) {
+                        final worker = bookedList[index];
+                        return WorkerListItem(
+                          key: ValueKey(worker),
+                          worker: worker,
+                          index: index,
+                        );
+                      },
+                    );
+                  }
                 },
               ),
             ),
@@ -56,7 +60,8 @@ class WorkerListItem extends StatelessWidget {
   final BookedModel worker;
   final int index;
 
-  const WorkerListItem({super.key, required this.worker, required this.index});
+  const WorkerListItem({Key? key, required this.worker, required this.index})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +129,7 @@ class WorkerListItem extends StatelessWidget {
                           ),
                           Icon(
                             Icons.done,
-                            weight: 10,
+                            size: 20,
                           )
                         ],
                       )
