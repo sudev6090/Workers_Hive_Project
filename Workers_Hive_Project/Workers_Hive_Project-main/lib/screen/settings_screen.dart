@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:workers_project/db/functions/db_functions.dart';
-import 'package:workers_project/screen/about_details.dart';
-import 'package:workers_project/screen/admin_details.dart';
-import 'package:workers_project/screen/help_details.dart';
+import 'package:workers_project/screen/settings_about_details.dart';
+import 'package:workers_project/screen/settings_admin_details.dart';
+import 'package:workers_project/screen/settings_help_details.dart';
 import 'package:workers_project/screen/login_screen.dart';
-import 'package:workers_project/screen/privacy_details.dart';
+import 'package:workers_project/screen/settings_privacy_details.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});

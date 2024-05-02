@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:workers_project/screen/register_screen.dart';
 import 'package:workers_project/widgets/bottom_nav_screen.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -124,32 +123,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   const SizedBox(
                     height: 5,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Create an Account?',
-                        style: TextStyle(
-                          fontSize: 17,
-                        ),
-                      ),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const ScreenRegister()));
-                          },
-                          child: const Text(
-                            'Sign Up',
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )),
-                    ],
-                  )
                 ],
               ),
             ),

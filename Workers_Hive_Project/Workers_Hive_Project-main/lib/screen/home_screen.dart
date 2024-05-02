@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:workers_project/db/functions/db_functions.dart';
 import 'package:workers_project/models/worker_model/worker_model.dart';
-import 'package:workers_project/screen/user_details.dart';
+import 'package:workers_project/screen/home_user_details.dart';
 
 class ScreenHome extends StatefulWidget {
   const ScreenHome({super.key});
