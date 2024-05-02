@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:workers_project/db/functions/db_functions.dart';
 import 'package:workers_project/screen/settings_about_details.dart';
-import 'package:workers_project/screen/settings_admin_details.dart';
+import 'package:workers_project/screen/settings_admin.dart';
 import 'package:workers_project/screen/settings_help_details.dart';
 import 'package:workers_project/screen/login_screen.dart';
 import 'package:workers_project/screen/settings_privacy_details.dart';
@@ -92,30 +92,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 );
               },
               child: fakelist(title: 'Help', icons: Icons.help_outline),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text('Warning'),
-                        content: const Text('Are You Sure'),
-                        actions: [
-                          ElevatedButton(
-                              onPressed: () {
-                                deleteAllData();
-                                Navigator.pop(context);
-                              },
-                              child: const Text('YES'))
-                        ],
-                      );
-                    });
-              },
-              child: fakelist(title: 'Reset', icons: Icons.refresh_outlined),
             ),
           ),
           Padding(

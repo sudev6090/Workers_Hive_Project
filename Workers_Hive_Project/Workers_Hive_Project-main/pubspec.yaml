@@ -41,6 +41,7 @@ dependencies:
   path_provider: ^2.1.3
   shared_preferences: ^2.2.3
   build_runner_core:
+  easy_pie_chart: ^1.0.0
   
 
 dev_dependencies:

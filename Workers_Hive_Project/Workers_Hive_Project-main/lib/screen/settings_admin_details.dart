@@ -3,23 +3,22 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:workers_project/db/functions/db_functions.dart';
 import 'package:workers_project/models/worker_model/worker_model.dart';
-import 'package:workers_project/screen/edit_screen.dart';
+import 'package:workers_project/screen/settings_admin_edit.dart';
 import 'package:workers_project/widgets/bottom_nav_screen.dart';
 
-class AdminScreen extends StatefulWidget {
-  const AdminScreen({super.key});
+class AdminDetails extends StatefulWidget {
+  const AdminDetails({super.key});
 
   @override
-  State<AdminScreen> createState() => _AdminScreenState();
+  State<AdminDetails> createState() => _AdminDetailsState();
 }
 
-class _AdminScreenState extends State<AdminScreen> {
+class _AdminDetailsState extends State<AdminDetails> {
   @override
   Widget build(BuildContext context) {
-    getAllWorkers();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ADMIN'),
+        title: const Text('USER DETAILS'),
       ),
       body: SafeArea(
         child: Column(

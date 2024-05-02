@@ -137,7 +137,7 @@ class _EditScreenState extends State<EditScreen> {
                         height: 50,
                         width: 200,
                         decoration: BoxDecoration(
-                          color: Colors.indigo,
+                          color: Color.fromARGB(255, 72, 70, 70),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: const Center(
