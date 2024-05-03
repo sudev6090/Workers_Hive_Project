@@ -12,6 +12,12 @@ class ScreenHome extends StatefulWidget {
 }
 
 class _ScreenHomeState extends State<ScreenHome> {
+  @override
+  void initState() {
+    getAllBookedWorkers();
+    super.initState();
+  }
+
   String search = "";
   List<WorkerModel> searchedList = [];
 

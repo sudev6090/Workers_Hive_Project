@@ -115,12 +115,20 @@ class _AdminScreenState extends State<AdminScreen> {
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(18)),
-                  child: Column(
+                  child: const Column(
                     children: [
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: 35,
                       ),
-                      Icon(Icons.bar_chart_rounded)
+                      Icon(
+                        Icons.bar_chart_rounded,
+                        size: 45,
+                      ),
+                      Text(
+                        'PIE CHART',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      )
                     ],
                   ),
                 ),
