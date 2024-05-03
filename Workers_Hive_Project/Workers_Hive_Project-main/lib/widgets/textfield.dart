@@ -16,12 +16,12 @@ import 'package:flutter/material.dart';
 //           border:const OutlineInputBorder(),
 //           prefixIcon: Icon(icons),
 //         ),
-//         validator: (value) {
-//           if (value!.isEmpty) {
-//             return validtext;
-//           }
-//           return null;
-//         },
+// validator: (value) {
+//   if (value!.isEmpty) {
+//     return validtext;
+//   }
+//   return null;
+// },
 //       ),
 //     );
 
@@ -44,6 +44,13 @@ class TextFieldd extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 10, bottom: 10),
       child: TextFormField(
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return validtext;
+          } else {
+            return null;
+          }
+        },
         controller: controller,
         keyboardType: TextInputType.name,
         decoration: InputDecoration(
@@ -51,12 +58,6 @@ class TextFieldd extends StatelessWidget {
           border: const OutlineInputBorder(),
           prefixIcon: Icon(icons),
         ),
-        validator: (value) {
-          if (value!.isEmpty) {
-            return validtext;
-          }
-          return null;
-        },
       ),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:easy_pie_chart/easy_pie_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:workers_project/db/functions/db_functions.dart';
-import 'package:hive/hive.dart';
 
 class PieChartScreen extends StatefulWidget {
   const PieChartScreen({super.key});
@@ -43,13 +42,37 @@ class _PieChartScreenState extends State<PieChartScreen> {
                   start: 0,
                   animateFromEnd: true,
                   size: 200,
+                  style: const TextStyle(color: Colors.white),
                   child: Center(
                     child: Text(tapIndex),
                   )),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
+          ),
+          Column(
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      color: Colors.orange,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text('Total Workers')
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
           ),
           Row(
             children: [
@@ -58,12 +81,16 @@ class _PieChartScreenState extends State<PieChartScreen> {
                 child: Container(
                   height: 30,
                   width: 30,
-                  color: Colors.lightGreen,
+                  color: Colors.black,
                 ),
               ),
+              const SizedBox(
+                width: 10,
+              ),
+              const Text('Confirm Workers')
             ],
           ),
-          SizedBox(height: 400),
+          const SizedBox(height: 250),
         ],
       ),
     );

@@ -32,6 +32,7 @@ class _AddScreenState extends State<AddScreen> {
     final placecontroller = TextEditingController();
     final phonecontroller = TextEditingController();
     final feescontroller = TextEditingController();
+    final _fomkey = GlobalKey<FormState>();
 
     Future<void> addWorkerFunction() async {
       final name = namecontroller.text.trim();
@@ -91,6 +92,7 @@ class _AddScreenState extends State<AddScreen> {
                 ),
               ),
               Form(
+                key: _fomkey,
                 child: Column(
                   children: [
                     const SizedBox(
@@ -104,33 +106,34 @@ class _AddScreenState extends State<AddScreen> {
                     TextFieldd(
                         name: 'Work :',
                         icons: CupertinoIcons.bag,
-                        validtext: '',
+                        validtext: 'Enter the Work',
                         controller: jobcontroller),
                     TextFieldd(
                         name: 'Place :',
                         icons: Icons.location_on,
-                        validtext: '',
+                        validtext: 'Enter the Place',
                         controller: placecontroller),
                     TextFieldd(
                         name: 'Phone no :',
                         icons: Icons.phone,
-                        validtext: '',
+                        validtext: 'Enter the Phone',
                         controller: phonecontroller),
                     TextFieldd(
                         name: 'Fees :',
                         icons: Icons.currency_rupee_sharp,
-                        validtext: '',
+                        validtext: 'Enter the Fees',
                         controller: feescontroller),
                     const SizedBox(
                       height: 50,
                     ),
                     InkWell(
                       onTap: () {
-                        addWorkerFunction();
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MyBottom()));
+                        if (_fomkey.currentState!.validate()) {
+                          addWorkerFunction();
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => MyBottom()));
+                        }
                       },
                       child: Container(
                         height: 50,
